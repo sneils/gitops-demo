@@ -13,4 +13,4 @@ spec:
           service:
             name: guestbook-ui
             port:
-              name: http
+              number: 80
