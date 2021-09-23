@@ -1,6 +1,13 @@
-# GitOps Demo with ArgoCD
+# GitOps Demo with KinD+ArgoCD
 
 Add some more info here :)
+
+## Requirements
+
+* [kind](https://github.com/kubernetes-sigs/kind)
+* [kubectl](https://github.com/kubernetes/kubectl)
+* [argocd](https://github.com/argoproj/argo-cd)
+* [jq](https://github.com/stedolan/jq)
 
 ## Steps
 
@@ -9,6 +16,6 @@ Add some more info here :)
 
 argocd login --username=admin argocd.localhost
 
-argocd app create guestbook-ui --repo https://github.com/sneils/gitops-demo --path guestbook-ui --dest-server https://kubernetes.default.svc --dest-namespace apps
+argocd app create guestbook -f apps/guestbook.yaml
 
 ```
