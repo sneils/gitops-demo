@@ -2,6 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: guestbook
+  labels:
+    app: guestbook
+    tier: ingress
 spec:
   rules:
   - host: localhost
@@ -11,6 +14,6 @@ spec:
         path: /
         backend:
           service:
-            name: guestbook
+            name: frontend
             port:
               number: 80
