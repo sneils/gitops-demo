@@ -15,7 +15,7 @@ kubectl wait -n ingress-nginx --for=condition=ready pod -l=app.kubernetes.io/com
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl wait -n argocd --for=condition=ready pod -l=app.kubernetes.io/name=argocd-server --timeout=90s
-kubectl apply -n argocd -f etc/argocd-ingress.yaml
+kubectl apply -n argocd -f etc/argocd/argocd-ingress.yaml
 
 kubectl create namespace apps
 

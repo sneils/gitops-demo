@@ -18,6 +18,6 @@ You can find a lot of examples in the official repo: [https://github.com/argopro
 
 argocd login --username=admin argocd.localhost
 
-argocd app create guestbook -f apps/guestbook.yaml
+argocd app create guestbook -f etc/argocd/guestbook.yaml
 
 ```
