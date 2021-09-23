@@ -15,7 +15,10 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 kubectl wait -n argocd --for=condition=ready pod -l=app.kubernetes.io/name=argocd-server --timeout=90s
 kubectl apply -n argocd -f argocd-ingress.yaml
 
+kubectl create namespace apps
+
 echo "argocd password:"
 kubectl -n argocd get secret argocd-initial-admin-secret -o json | jq -r .data.password | base64 -d
+printf "\n\n"
 
 echo "add \`127.0.0.1 argocd.localhost\` to your /etc/hosts to be able to access it :)"

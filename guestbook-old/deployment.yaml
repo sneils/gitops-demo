@@ -14,7 +14,14 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: saturnism/guestbook-service:latest
+      - image: gcr.io/google-samples/gb-frontend:v4
         name: guestbook-ui
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
         ports:
         - containerPort: 80
