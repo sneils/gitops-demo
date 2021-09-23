@@ -2,6 +2,8 @@
 
 Add some more info here :)
 
+You can find a lot of examples in the official repo: [https://github.com/argoproj/argocd-example-apps]
+
 ## Requirements
 
 * [kind](https://github.com/kubernetes-sigs/kind)
