@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
+  replicas: 3
   selector:
     matchLabels:
         app: guestbook
         tier: frontend
   template:
-    replicas: 3
     metadata:
       labels:
         app: guestbook

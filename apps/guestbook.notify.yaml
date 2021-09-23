@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     #notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: "-1001517027225"
-    notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: "GitOpsDemoChannel"
+    notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: gitopsdemochannel
 spec:
   destination:
     name:
