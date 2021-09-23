@@ -2,7 +2,7 @@
 
 set -E -e -u -o pipefail
 
-cd "$(realpath "$0")/.."
+cd "$(dirname "$0")/.."
 
 kind create cluster --wait=90s --config=etc/kind-config.yaml
 
@@ -16,6 +16,12 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl wait -n argocd --for=condition=ready pod -l=app.kubernetes.io/name=argocd-server --timeout=90s
 kubectl apply -n argocd -f etc/argocd-ingress.yaml
+
+# notification system
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/v1.1.1/manifests/install.yaml
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/v1.1.1/catalog/install.yaml
+kubectl apply -n argocd -f etc/argocd-notify-secret.yaml
+kubectl apply -n argocd -f etc/argocd-notify-config.yaml
 
 kubectl create namespace apps
 

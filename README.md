@@ -16,7 +16,7 @@ You can find a lot of examples in the official repo: [https://github.com/argopro
 ```sh
 ./create_cluster.sh
 
-argocd login --username=admin argocd.localhost
+argocd login  argocd.localhost --insecure --username=admin
 
 argocd app create guestbook -f apps/guestbook.yaml
 

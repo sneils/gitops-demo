@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+  annotations:
+    #notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: "-1001517027225"
+    notifications.argoproj.io/subscribe.on-sync-succeeded.telegram: "GitOpsDemoChannel"
+spec:
+  destination:
+    name:
+    namespace: apps
+    server: https://kubernetes.default.svc
+  source:
+    path: apps/guestbook
+    repoURL: https://github.com/sneils/gitops-demo
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  project: default
