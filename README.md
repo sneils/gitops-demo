@@ -20,4 +20,6 @@ argocd login --username=admin argocd.localhost
 
 argocd app create guestbook -f etc/argocd/guestbook.yaml
 
+flux bootstrap github --owner=sneils --repository=gitops-demo --private=false --personal=true --path=etc/fluxcd
+
 ```
