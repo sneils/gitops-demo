@@ -23,6 +23,6 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 100Mi
+            memory: 100Mifsgsggsgsg
         ports:
         - containerPort: 80
