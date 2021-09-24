@@ -19,9 +19,9 @@ kubectl apply -n argocd -f etc/argocd-ingress.yaml
 # notification system
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/v1.1.1/manifests/install.yaml
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj-labs/argocd-notifications/v1.1.1/catalog/install.yaml
-kubectl apply -n argocd -f etc/argocd-notifications-secret.yaml
+#kubectl apply -n argocd -f etc/argocd-notifications-secret.yaml
 # all notifications to my instagram :)
-kubectl patch -n argocd cm argocd-notifications-cm --type merge --patch-file etc/argocd-notifications-cm.yaml
+#kubectl patch -n argocd cm argocd-notifications-cm --type merge --patch-file etc/argocd-notifications-cm.yaml
 
 # or we'll have to configure it by apps
 #kubectl patch cm argocd-notifications-cm --type merge -n argocd -p '{"data": {"service.telegram": "{ token: $telegram-token }"}}'
