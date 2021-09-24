@@ -11,8 +11,7 @@ spec:
   source:
     path: apps
     repoURL: https://github.com/sneils/gitops-demo
-    targetRevision: HEAD
-    branch: app-in-app
+    targetRevision: demo
   project: default
   syncPolicy:
     syncOptions:

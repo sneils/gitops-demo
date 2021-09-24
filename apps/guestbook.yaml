@@ -11,7 +11,7 @@ spec:
   source:
     path: apps/guestbook
     repoURL: https://github.com/sneils/gitops-demo
-    targetRevision: HEAD
+    targetRevision: demo
     directory:
       recurse: true
   project: default
