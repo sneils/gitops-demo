@@ -16,6 +16,8 @@ You can find a lot of examples in the official repo: [https://github.com/argopro
 ```sh
 ./create_cluster.sh
 
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+
 argocd login  argocd.localhost --insecure --username=admin
 
 argocd app create guestbook -f apps/guestbook.yaml
